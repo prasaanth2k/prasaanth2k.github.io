@@ -2,7 +2,7 @@
 title: File Recovery with process in proc
 author: prasaanth
 date: 2025-03-07 11:33:00 +0800
-tags: linux
+tags: [linux]
 categories: [Linux, Filesystem]
 ---
 
@@ -23,7 +23,7 @@ what of that process by using this feature we can able to recover the binary fil
 
 ## Example proc folder strcture of htop
 <br>
-<img class="source_images" src="/assets/img/htopprocfolder.png">
+<img class="source_images" src="/assets/img/htopprocfolder.png" alt="Screenshot of the htop process folder in Linux terminal">
 
 <br>
 
@@ -42,4 +42,4 @@ we can able get the file and it work this is how the linx system process and fil
 <br>
 <br>
 
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7244366010898640896?compact=1" height="600" width="800" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7244366010898640896?compact=1" height="600" width="800" frameborder="0" allowfullscreen="" title="Embedded post" alt="Screenshot of the htop process folder in Linux terminal"></iframe>

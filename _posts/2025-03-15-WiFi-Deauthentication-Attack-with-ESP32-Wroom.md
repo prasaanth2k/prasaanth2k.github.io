@@ -2,13 +2,13 @@
 title: WiFi Deauthentication Attack with ESP32 Wroom
 author: prasaanth
 date: 2025-03-07 11:33:00 +0800
-tags: WiFi IoT Reverse Engineering
+tags: [WiFi, IoT, Reverse, Engineering]
 categories: [WiFi, Reverse Engineering,IoT Security]
 ---
 
 #### WiFi Deauthentication [802.11]
 
-<img class="source_images" src="/assets/img/esp32_NODEMCU_cp21-550x550w.png">
+<img class="source_images" src="/assets/img/esp32_NODEMCU_cp21-550x550w.png" alt="Screenshot of the htop process folder in Linux terminal">
 
 How does the `WiFi deauthentication` works basically some people are confusing with jamer and the deauthentication for this wifi
 deauthentication is nothing an device send deauth signal to client devices for example we will take the `esp32` deauth tool form 
@@ -56,14 +56,14 @@ for that we need to send raw 802.11 frames to the access point in esp32 wroom wi
 ever well-constructed frame the something on the low level that was blocking after much research I figured out expressif has 
 blocked that feature and I tried some online patched lib and put it into my project it didn't work so I decided  let's patch our library 
 at that time only my reverse engineering skills where helped me after some research on which function was blocking that and checking 
-<img class="source_images" src="/assets/img/function1.png">
+<img class="source_images" src="/assets/img/function1.png" alt="Screenshot of the htop process folder in Linux terminal">
 
 so extracted the object file from that lib and patched the check there is a function called `ieee80211_raw_frame_sanity_check` this is 
 where blocked me this function role is it will check any type malicious frame are being gone if in case any frame send it will 
 
-<img class="source_images" src="/assets/img/afterpatchfn.png">
+<img class="source_images" src="/assets/img/afterpatchfn.png" alt="Screenshot of the htop process folder in Linux terminal">
 
 it will return false so I simply patch the bin like just `return 0` so it will pass the sanity check so now I can send raw wifi because 
 ever I want so I can now send a deauth frame without any restriction
 
-<img class="source_images" src="/assets/img/inassembly.png">
+<img class="source_images" src="/assets/img/inassembly.png" alt="Screenshot of the htop process folder in Linux terminal">
